@@ -19,7 +19,7 @@ jobs:
           conda-build-version: "*"
       - name: build recipe
         shell: bash -el {0}
-        run: conda build conda-recipe -c conda-forge -c nodefaults --output-folder dist
+        run: conda build recipe -c conda-forge -c nodefaults --output-folder dist
       - name: upload builds
         uses: actions/upload-artifact@v3
         with:
