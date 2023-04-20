@@ -152,6 +152,9 @@ eMappingFile2Encoding(const char *szLeafname)
 	if (STRCEQ(szMappingFile, MAPPING_FILE_UTF_8)) {
 		return encoding_utf_8;
 	}
+	if (STRCEQ(szMappingFile, MAPPING_FILE_IPAPHON)) {
+		return encoding_ipaphon;
+	}
 	if (STRCEQ(szMappingFile, MAPPING_FILE_CP852) ||
 	    STRCEQ(szMappingFile, MAPPING_FILE_CP1250) ||
 	    STRCEQ(szMappingFile, MAPPING_FILE_8859_2)) {

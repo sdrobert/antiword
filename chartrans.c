@@ -373,7 +373,7 @@ ulTranslateCharacters(USHORT usChar, ULONG ulFileOffset, int iWordVersion,
 	}
 
 	/* Microsoft Unicode to real Unicode */
-	if (usChar >= 0xf020 && usChar <= 0xf0ff) {
+	if (eEncoding != encoding_ipaphon && usChar >= 0xf020 && usChar <= 0xf0ff) {
 		DBG_HEX_C(usPrivateArea[usChar - 0xf020] == 0x003f, usChar);
 		usChar = usPrivateArea[usChar - 0xf020];
 	}

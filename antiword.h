@@ -247,6 +247,7 @@
 #define MAPPING_FILE_8859_15	"8859-15.txt"
 	/* UTF-8 */
 #define MAPPING_FILE_UTF_8	"UTF-8.txt"
+#define MAPPING_FILE_IPAPHON "ipaphon.txt"
 #endif /* __riscos */
 
 /* Prototypes */

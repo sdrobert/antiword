@@ -72,7 +72,8 @@ typedef enum encoding_tag {
 	encoding_latin_1 = 801,
 	encoding_latin_2 = 802,
 	encoding_cyrillic = 805,
-	encoding_utf_8 = 1601
+	encoding_utf_8 = 1601,
+	encoding_ipaphon = 10,
 } encoding_type;
 
 /* Font translation table entry */
