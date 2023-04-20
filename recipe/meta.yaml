@@ -1,0 +1,22 @@
+{% set version = "0.37" %}
+
+package:
+  name: antiword
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/sdrobert/antiword.git
+  git_depth: 1
+
+build:
+  number: 1
+  skip: true  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - make
+
+test:
+  commands:
+    - antiword -h
