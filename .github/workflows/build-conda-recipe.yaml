@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   build-conda:
-    name: build-conda (${{ matrix.python-version }}
+    name: build-conda (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false

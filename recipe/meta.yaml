@@ -16,7 +16,15 @@ requirements:
   build:
     - {{ compiler('c') }}
     - cmake >=3.10
+    - make  # [not win]
+    - ninja  # [win]
 
 test:
   commands:
     - antiword -h
+
+
+about:
+  license: GPL-2.0
+  summary: 'An antiword port'
+  dev_url: https://github.com/sdrobert/antiword
