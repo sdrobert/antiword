@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-export HOME="$PREFIX"
-
-make && make install
+cmake -B build
+cmake --build build --target install

@@ -1,0 +1,29 @@
+name: Build Conda packages
+
+on: workflow_dispatch
+
+jobs:
+  build-conda:
+    name: build-conda (${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "macos-latest"]
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: setup miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          conda-build-version: "*"
+      - name: build recipe
+        shell: bash -el {0}
+        run: conda build conda-recipe -c conda-forge -c nodefaults --output-folder dist
+      - name: upload builds
+        uses: actions/upload-artifact@v3
+        with:
+          name: conda-${{ matrix.os }}
+          path: dist
+          retention-days: 5
+          if-no-files-found: error

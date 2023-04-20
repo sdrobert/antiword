@@ -15,7 +15,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - make
+    - cmake >=3.10
 
 test:
   commands:
