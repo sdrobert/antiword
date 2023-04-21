@@ -1120,27 +1120,27 @@ bWordDecryptor(FILE *pFile, long lFilesize, diagram_type *pDiag)
 				vStoreCharacter((ULONG)' ', pOutput);
 				break;
 			}
-			if (tOptions.iParagraphBreak == 0 &&
-			    (tOptions.eConversionType == conversion_text ||
-			     tOptions.eConversionType == conversion_fmt_text)) {
-				/* No logical lines, so no tab expansion */
+			// if (tOptions.iParagraphBreak == 0 &&
+			//     (tOptions.eConversionType == conversion_text ||
+			//      tOptions.eConversionType == conversion_fmt_text)) {
+			// 	/* No logical lines, so no tab expansion */
 				vStoreCharacter(TAB, pOutput);
 				break;
-			}
-			lHalfSpaceWidth = (lComputeSpaceWidth(
-					pOutput->tFontRef,
-					pOutput->usFontSize) + 1) / 2;
-			lTmp = lTotalStringWidth(pAnchor);
-			lTmp += lDrawUnits2MilliPoints(pDiag->lXleft);
-			lTmp /= lDefaultTabWidth;
-			do {
-				vStoreCharacter((ULONG)FILLER_CHAR, pOutput);
-				lWidthCurr = lTotalStringWidth(pAnchor);
-				lWidthCurr +=
-					lDrawUnits2MilliPoints(pDiag->lXleft);
-			} while (lTmp == lWidthCurr / lDefaultTabWidth &&
-				 lWidthCurr < lWidthMax + lRightIndentation);
-			break;
+			// }
+			// lHalfSpaceWidth = (lComputeSpaceWidth(
+			// 		pOutput->tFontRef,
+			// 		pOutput->usFontSize) + 1) / 2;
+			// lTmp = lTotalStringWidth(pAnchor);
+			// lTmp += lDrawUnits2MilliPoints(pDiag->lXleft);
+			// lTmp /= lDefaultTabWidth;
+			// do {
+			// 	vStoreCharacter((ULONG)FILLER_CHAR, pOutput);
+			// 	lWidthCurr = lTotalStringWidth(pAnchor);
+			// 	lWidthCurr +=
+			// 		lDrawUnits2MilliPoints(pDiag->lXleft);
+			// } while (lTmp == lWidthCurr / lDefaultTabWidth &&
+			// 	 lWidthCurr < lWidthMax + lRightIndentation);
+			// break;
 		default:
 			if (bHiddenText && tOptions.bHideHiddenText) {
 				continue;
