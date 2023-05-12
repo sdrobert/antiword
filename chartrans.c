@@ -680,6 +680,7 @@ ulTranslateCharacters(USHORT usChar, ULONG ulFileOffset, int iWordVersion,
 
 	/* Untranslated Unicode character */
 	// return 0x3f;
+	if (eEncoding == encoding_ipaphon && usChar == 0x2621) usChar = 0x02a4;
 	return (ULONG)usChar;
 } /* end of ulTranslateCharacters */
 
