@@ -679,7 +679,8 @@ ulTranslateCharacters(USHORT usChar, ULONG ulFileOffset, int iWordVersion,
 	DBG_MSG_C(usChar >= 0xe000 && usChar < 0xf900, "Private Use Area");
 
 	/* Untranslated Unicode character */
-	return 0x3f;
+	// return 0x3f;
+	return (ULONG)usChar;
 } /* end of ulTranslateCharacters */
 
 /*
